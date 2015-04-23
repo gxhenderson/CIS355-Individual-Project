@@ -25,8 +25,8 @@ if ($mysqli) {
     $DeleteADistance = 4; // after user clicked DeleteADistance button on list 
     $DistanceExecuteInsert = 5; // after user clicked insertSubmit button on form
     $DistanceExecuteUpdate = 6; // after user clicked updateSubmit button on form
-	$BackToDistance = 7; // after user clicks to go back to the database
-	$BackToButtons = 8; // after user clicks on button to go to welcome page
+    $BackToDistance = 7; // after user clicks to go back to the database
+    $BackToButtons = 8; // after user clicks on button to go to welcome page
 
     $_SESSION['DistanceID'] = $_POST['uid'];
     $userlocation = $_SESSION['location'];
@@ -67,7 +67,7 @@ if ($mysqli) {
             echo $_SESSION['DistanceID'];
             displayHTMLHead();
             deleteRecord($mysqli, $usertable);   // delete is immediate (no confirmation)
-			header("Location: Distance.php");
+	    header("Location: Distance.php");
             break;
         case $DistanceExecuteInsert:
             insertRecord($mysqli, $usertable);
@@ -77,12 +77,12 @@ if ($mysqli) {
             updateRecord($mysqli, $usertable);
 			header("Location: Distance.php");
             break;
-		case $BackToDistance:
-			header("Location: Distance.php");
-			break;
-		case $BackToButtons:
-			header("Location: welcome.php");
-			break;
+	case $BackToDistance:
+	    header("Location: Distance.php");
+	    break;
+	case $BackToButtons:
+	    header("Location: welcome.php");
+	    break;
     endswitch;
 } // ---------- end if ---------- end main processing ----------
 ?>
